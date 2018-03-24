@@ -1,1 +1,120 @@
 /* You can add global styles to this file, and also import other style files */
+a {
+    cursor: pointer;
+}
+
+nav, .side-nav {
+    animation-name: color-shift;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    color: black;
+    text-shadow: 0px 0px 3px white;
+    border: 1px solid rgba(0, 0, 0, 0.30);
+}
+
+@keyframes color-shift {
+    0% {
+        background: linear-gradient(to right, #ff0000, #ffe500);
+        /*background-color: #ff0000; 0*/
+    }
+
+    5% {
+        background: linear-gradient(to right, #ff4c00, #ccff00);
+        /*background-color: #ff4c00; 18*/
+    }
+
+    10% {
+        background: linear-gradient(to right, #ff9900, #7fff00);
+        /*background-color: #ff9900; 36*/
+    }
+    15% {
+        background: linear-gradient(to right, #ffe500, #32ff00);
+        /*background-color: #ffe500; 54*/
+    }
+
+    20% {
+        background: linear-gradient(to right, #ccff00, #00ff19);
+        /*background-color: #ccff00; 72*/
+    }
+
+    25% {
+        background: linear-gradient(to right, #7fff00, #00ff65);
+        /*background-color: #7fff00; 90*/
+    }
+
+    30% {
+        background: linear-gradient(to right, #32ff00, #00ffb2);
+        /*background-color: #32ff00; 108*/
+    }
+
+    35% {
+        background: linear-gradient(to right, #00ff19, #00ffff);
+        /*background-color: #00ff19; 126*/
+    }
+
+    40% {
+        background: linear-gradient(to right, #00ff65, #00b2ff);
+        /*background-color: #00ff65; 144*/
+    }
+
+    45% {
+        background: linear-gradient(to right, #00ffb2, #0065ff);
+        /*background-color: #00ffb2; 162*/
+    }
+
+    50% {
+        background: linear-gradient(to right, #00ffff, #0019ff);
+        /*background-color: #00ffff; 180*/
+    }
+
+    55% {
+        background: linear-gradient(to right, #00b2ff, #3300ff);
+        /*background-color: #00b2ff; 198*/
+    }
+
+    60% {
+        background: linear-gradient(to right, #0065ff, #7f00ff);
+        /*background-color: #0065ff; 216*/
+    }
+
+    65% {
+        background: linear-gradient(to right, #0019ff, #cb00ff);
+        /*background-color: #0019ff; 234*/
+    }
+
+    70% {
+        background: linear-gradient(to right, #3300ff, #ff00e5);
+        /*background-color: #3300ff; 252*/
+    }
+
+    75% {
+        background: linear-gradient(to right, #7f00ff, #ff0098);
+        /*background-color: #7f00ff; 270*/
+    }
+
+    80% {
+        background: linear-gradient(to right, #cb00ff, #ff004c);
+        /*background-color: #cb00ff; 288*/
+    }
+
+    85% {
+        background: linear-gradient(to right, #ff00e5, #ff0000);
+        /*background-color: #ff00e5; 306*/
+    }
+
+    90% {
+        background: linear-gradient(to right, #ff0098, #ff4c00);
+        /*background-color: #ff0098; 324*/
+    }
+
+    95% {
+        background: linear-gradient(to right, #ff004c, #ff9900);
+        /*background-color: #ff004c; 342*/
+    }
+
+    100% {
+        background: linear-gradient(to right, #ff0000, #ffe500);
+        /*background-color: #ff0000; 360*/
+    }
+}
