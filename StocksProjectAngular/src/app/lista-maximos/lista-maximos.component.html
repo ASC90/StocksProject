@@ -1,5 +1,13 @@
 <div class="container">
-  <ul>
-    <li></li>
+  <button class="btn waves-effect" (click)="addCompanies()">Load Companies</button>
+  <button class="btn waves-effect" (click)="sort()">Sort</button>
+  <ul *ngIf="lista">
+    <li *ngFor="let item of lista">Company: {{item.ticker}}, {{item.percent}}%</li>
+  </ul>
+  <ul *ngIf="errores">
+      <li *ngFor="let item of errores">Not found: {{item}}</li>
+  </ul>
+  <ul *ngIf="deprecated">
+      <li *ngFor="let item of deprecated">Deprecated: {{item}}</li>
   </ul>
 </div>

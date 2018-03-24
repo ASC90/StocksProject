@@ -8,6 +8,7 @@ export class MaximHistoricoService {
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Authorization': 'my-auth-token' }),
   };
+  listaDeMaximos = [];
   constructor(
     private key: KeyService,
     private http: HttpClient

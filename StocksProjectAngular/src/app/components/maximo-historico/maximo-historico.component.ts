@@ -17,7 +17,7 @@ export class MaximoHistoricoComponent implements OnInit {
   dataInput: any;
   isLoading = false;
   constructor(
-    private data: MaximHistoricoService,
+    public data: MaximHistoricoService,
     private formBuilder: FormBuilder
   ) { }
 
