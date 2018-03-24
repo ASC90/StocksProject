@@ -42,3 +42,7 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# Secret Key
+/src/app/services/key.service.spec.ts
+/src/app/services/key.service.ts
