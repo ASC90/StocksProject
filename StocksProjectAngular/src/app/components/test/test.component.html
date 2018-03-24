@@ -11,19 +11,20 @@
         Open: {{data['1. open']}}, High: {{data['2. high']}}, Low: {{data['3. low']}}, Close: {{data['4. close']}}, Volume: {{data['5. volume']}}
       </li>
     </ul>
-    <ngx-charts-line-chart
-      *ngIf="chartCompleted"
-      [scheme]="{domain: ['#5AA454']}"
-      [results]="chartResults"
-      [gradient]="false"
-      [xAxis]="true"
-      [yAxis]="true"
-      [legend]="false"
-      [showXAxisLabel]="true"
-      [showYAxisLabel]="true"
-      [xAxisLabel]="'Date'"
-      [yAxisLabel]="'Valume'">
-    </ngx-charts-line-chart>
+    <div *ngIf="chartCompleted" class="height-chart">
+        <ngx-charts-line-chart
+        [scheme]="{domain: ['#5AA454']}"
+        [results]="chartResults"
+        [gradient]="false"
+        [xAxis]="true"
+        [yAxis]="true"
+        [legend]="false"
+        [showXAxisLabel]="true"
+        [showYAxisLabel]="true"
+        [xAxisLabel]="'Date'"
+        [yAxisLabel]="'Valume'">
+      </ngx-charts-line-chart>
+    </div>
   </div>
 </div>
 

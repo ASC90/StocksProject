@@ -13,6 +13,6 @@ export class TestService {
     private http: HttpClient
   ) { }
   getSimpleJson(): Observable<any> {
-    return this.http.get('https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=MSFT&interval=1min&apikey=' + this.key.KEY);
+    return this.http.get('https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=MSFT&interval=15min&outputsize=full&apikey=' + this.key.KEY);
   }
 }
