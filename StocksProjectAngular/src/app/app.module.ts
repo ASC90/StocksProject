@@ -2,6 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MaterializeModule } from 'angular2-materialize';
 import {HttpClientModule} from '@angular/common/http';
+// animations
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 import { KeyService } from './services/key.service';
 import { TestService } from './services/test.service';
@@ -18,7 +21,9 @@ import { TestComponent } from './components/test/test.component';
   imports: [
     BrowserModule,
     MaterializeModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxChartsModule,
+    BrowserAnimationsModule
   ],
   providers: [KeyService, TestService],
   bootstrap: [AppComponent]
