@@ -15,6 +15,7 @@ export class MaximoHistoricoComponent implements OnInit {
   searchList = [];
   isSearchingCompany = false;
   dataInput: any;
+  isLoading = false;
   constructor(
     private data: MaximHistoricoService,
     private formBuilder: FormBuilder
@@ -25,9 +26,11 @@ export class MaximoHistoricoComponent implements OnInit {
     this.getTickersAndCompanies();
   }
   getData() {
+    this.isLoading = true;
     this.data.getData(this.form.controls.ticker.value).subscribe(res => {
       // console.log(res);
       this.dataInput = res; 
+      this.isLoading = false;
     });
     
   }

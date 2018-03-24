@@ -17,12 +17,14 @@ import { TestComponent } from './components/test/test.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { MaximoHistoricoComponent } from './components/maximo-historico/maximo-historico.component';
 import { SingleChartComponent } from './components/single-chart/single-chart.component';
+import { ListaMaximosComponent } from './lista-maximos/lista-maximos.component';
 
 
 
 const appRoutes: Routes = [
   { path: 'test', component: TestComponent },
   { path: 'maximos', component: MaximoHistoricoComponent },
+  { path: 'lista', component: ListaMaximosComponent },
   { path: '',
     redirectTo: '/test',
     pathMatch: 'full'
@@ -35,7 +37,8 @@ const appRoutes: Routes = [
     TestComponent,
     NavbarComponent,
     MaximoHistoricoComponent,
-    SingleChartComponent
+    SingleChartComponent,
+    ListaMaximosComponent
   ],
   imports: [
     BrowserModule,

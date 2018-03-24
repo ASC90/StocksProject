@@ -1,3 +1,17 @@
-<p>
-  single-chart works!
-</p>
+<div *ngIf="hasLoaded" class="height-chart">
+    <div>
+      {{percentHistoric}}%
+    </div>
+    <ngx-charts-line-chart
+    [scheme]="{domain: ['#5AA454']}"
+    [results]="chartResults"
+    [gradient]="false"
+    [xAxis]="true"
+    [yAxis]="true"
+    [legend]="false"
+    [showXAxisLabel]="true"
+    [showYAxisLabel]="true"
+    [xAxisLabel]="'Date'"
+    [yAxisLabel]="'Price'">
+  </ngx-charts-line-chart>
+</div>

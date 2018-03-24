@@ -28,5 +28,10 @@
             </a>
         </li>
     </ul>
+    <div *ngIf="isLoading">
+        <div class="progress">
+            <div class="indeterminate"></div>
+        </div>
+    </div>
     <app-single-chart *ngIf="dataInput" [data]="dataInput"></app-single-chart>
 </div>
