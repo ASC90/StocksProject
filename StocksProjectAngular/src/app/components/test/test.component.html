@@ -1,0 +1,15 @@
+<div class="container">
+  <button (click)="loadTest()" class="btn waves-effect">Load test</button>
+  <div *ngIf="isLoading">Loading...
+    <div class="progress">
+      <div class="indeterminate"></div>
+    </div>
+  </div>
+  <div *ngIf="list">
+    <ul>
+      <li *ngFor="let data of list">
+        Open: {{data['1. open']}}, High: {{data['2. high']}}, Low: {{data['3. low']}}, Close: {{data['4. close']}}, Volume: {{data['5. volume']}}
+      </li>
+    </ul>
+  </div>
+</div>
