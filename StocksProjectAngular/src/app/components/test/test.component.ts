@@ -12,7 +12,10 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 export class TestComponent implements OnInit {
   isLoading = false;
   list = [];
-  chartResults = [];
+  chartResults = [{
+    name: 'Volume',
+    series: []
+  }];
   chartCompleted = false;
   constructor(private testService: TestService) {
   }
@@ -29,13 +32,13 @@ export class TestComponent implements OnInit {
         if (item) {
           // console.log(res['Time Series (1min)'][item]['1. open']);
           this.list.push(res['Time Series (1min)'][item]);
-          this.chartResults.push({
+          this.chartResults[0].series.push({
             name: item,
             value: res['Time Series (1min)'][item]['5. volume']
           })
         }
       }
-      this.chartResults.reverse();
+      this.chartResults[0].series.reverse();
       console.log('chart results', this.chartResults);
       this.chartCompleted = true;
       this.isLoading = false;
