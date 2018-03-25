@@ -36,7 +36,7 @@
     <app-single-chart *ngIf="dataInput" [data]="dataInput"></app-single-chart>
     <div>
         <ul>
-            <li *ngFor="let item of data.listaDeMaximos">Ticker: {{item.percent}}, {{item.percent}}%</li>
+            <li *ngFor="let item of data.listaDeMaximos">Ticker: {{item.ticker}}, {{item.percent}}%</li>
         </ul>
     </div>
 </div>
