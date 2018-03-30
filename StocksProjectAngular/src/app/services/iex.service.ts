@@ -8,6 +8,7 @@ import { map } from 'rxjs/operators';
 export class IexService {
   tickers = [];
   constructor(private http: HttpClient) { }
+
   getTickers():Observable<any> {
     return this.http.get("https://api.iextrading.com/1.0/ref-data/symbols").pipe(
       map((res: any[]) => {
@@ -21,4 +22,8 @@ export class IexService {
         return arr;
       }));
   }
+  getCompanyInfo(ticker: string):Observable<any> {
+    return this.http.get("https://api.iextrading.com/1.0/stock/"+ticker+"/company");
+  }
+  
 }
