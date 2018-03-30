@@ -11,9 +11,14 @@ export class IexService {
   getTickers():Observable<any> {
     return this.http.get("https://api.iextrading.com/1.0/ref-data/symbols").pipe(
       map((res: any[]) => {
-        this.tickers = res; 
-        return res;
-      }) // or any other operator
-    );
+        let arr = [];
+        arr = res.filter(data => {
+          if (data.type == "cs") {
+            return data;
+          }
+        });
+        this.tickers = arr; 
+        return arr;
+      }));
   }
 }
