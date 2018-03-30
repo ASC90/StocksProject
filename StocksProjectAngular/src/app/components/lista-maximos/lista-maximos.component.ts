@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MaximHistoricoService } from '../services/maxim-historico.service';
+import { MaximHistoricoService } from '../../services/maxim-historico.service';
 
 @Component({
   selector: 'app-lista-maximos',

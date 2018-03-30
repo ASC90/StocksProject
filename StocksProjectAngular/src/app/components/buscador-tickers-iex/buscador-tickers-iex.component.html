@@ -1,0 +1,31 @@
+<div class="container">
+  <button class="btn waves-effect" (click)="getTickers()">Get tickers</button>
+  <form [formGroup]="form">
+    <div class="input-field form-group">
+      <input id="search" type="text" class="form-control" formControlName="search">
+      <label for="search">Search a company</label>
+      <button (click)="searchCompany()" class="btn waves-effect">Search</button>
+    </div>
+  </form>
+  <div *ngIf="isSearchingCompany">
+    <div class="progress">
+      <div class="determinate" [ngStyle]="{'width': searchingPercent + '%'}"></div>
+    </div>
+  </div>
+  <ul *ngIf="actualPaginationList.length > 0" class="pagination">
+    <li class="waves-effect" [class.disabled]="this.actualPage > 0 ? false : true">
+      <a (click)="prevousPage()">
+        <i class="material-icons">chevron_left</i>
+      </a>
+    </li>
+    <li *ngFor="let item of paginatedList; index as i" class="waves-effect" [class.active]="actualPage == i ? true : false">
+      <a (click)="loadContentPagination(i)">{{i + 1}}</a>
+    </li>
+    <li class="waves-effect" [class.disabled]="this.actualPage < this.paginatedList.length - 1 ? false : true">
+      <a (click)="nextPage()">
+        <i class="material-icons">chevron_right</i>
+      </a>
+    </li>
+  </ul>
+  <div *ngFor="let item of actualPaginationList">{{item.symbol}} {{item.name}}</div>
+</div>

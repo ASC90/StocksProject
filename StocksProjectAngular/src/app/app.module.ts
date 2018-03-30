@@ -11,13 +11,16 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { KeyService } from './services/key.service';
 import { TestService } from './services/test.service';
 import { MaximHistoricoService } from './services/maxim-historico.service';
+import { IexService } from './services/iex.service';
 
 import { AppComponent } from './app.component';
 import { TestComponent } from './components/test/test.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { MaximoHistoricoComponent } from './components/maximo-historico/maximo-historico.component';
 import { SingleChartComponent } from './components/single-chart/single-chart.component';
-import { ListaMaximosComponent } from './lista-maximos/lista-maximos.component';
+import { ListaMaximosComponent } from './components/lista-maximos/lista-maximos.component';
+import { BuscadorTickersIexComponent } from './components/buscador-tickers-iex/buscador-tickers-iex.component';
+
 
 
 
@@ -25,6 +28,7 @@ const appRoutes: Routes = [
   { path: 'test', component: TestComponent },
   { path: 'maximos', component: MaximoHistoricoComponent },
   { path: 'lista', component: ListaMaximosComponent },
+  { path: 'buscador-tickers-iex', component: BuscadorTickersIexComponent },
   { path: '',
     redirectTo: '/test',
     pathMatch: 'full'
@@ -38,7 +42,8 @@ const appRoutes: Routes = [
     NavbarComponent,
     MaximoHistoricoComponent,
     SingleChartComponent,
-    ListaMaximosComponent
+    ListaMaximosComponent,
+    BuscadorTickersIexComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +57,7 @@ const appRoutes: Routes = [
     ),
     ReactiveFormsModule
   ],
-  providers: [KeyService, TestService, MaximHistoricoService],
+  providers: [KeyService, TestService, MaximHistoricoService, IexService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
