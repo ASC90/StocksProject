@@ -10,6 +10,17 @@ import { Route, ActivatedRoute } from '@angular/router';
 export class TickerDetailComponent implements OnInit {
   tickerDetail = {};
   historicalMaxPercent = 0;
+  notFound = true;
+  //
+  monthDiff = 0;
+  trimesterDiff = 0;
+  halfYearDiff = 0;
+  yearDiff = 0;
+  // 
+  _monthDiff = false;
+  _trimesterDiff = false;
+  _halfYearDiff = false;
+  _yearDiff = false;
   constructor(
     private data: IexService,
     private router: ActivatedRoute
@@ -30,6 +41,29 @@ export class TickerDetailComponent implements OnInit {
       }
       console.log({max: maximusPrice, actual: actualPrice});
       this.historicalMaxPercent = Math.abs(((actualPrice / maximusPrice) * 100) - 100);
+      // Revaloricación
+      const month = res.dataset_data.data[(res.dataset_data.data.length - 1)-20][11];
+      const trimestre = res.dataset_data.data[(res.dataset_data.data.length - 1)-60][11];
+      const halfYear = res.dataset_data.data[(res.dataset_data.data.length - 1)-120][11];
+      const year = res.dataset_data.data[(res.dataset_data.data.length - 1)-240][11];
+
+      this.monthDiff = ((actualPrice - month) / month) * 100;
+      this.monthDiff > 0 ? this._monthDiff = true : this._monthDiff = false;
+
+      this.trimesterDiff = ((actualPrice - trimestre) / trimestre) * 100;
+      this.trimesterDiff > 0 ? this._trimesterDiff = true : this._trimesterDiff = false;
+
+      this.halfYearDiff = ((actualPrice - halfYear) / halfYear) * 100;
+      this.halfYearDiff > 0 ? this._halfYearDiff = true : this._halfYearDiff = false;
+
+      this.yearDiff = ((actualPrice - year) / year) * 100;
+      this.yearDiff > 0 ? this._yearDiff = true : this._yearDiff = false;
+      this.notFound = false;
+    }, err => {
+      console.log(err);
+      if(err.status == 404) {
+        this.notFound = true;
+      }
     });
   }
 

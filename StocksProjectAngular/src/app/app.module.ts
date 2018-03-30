@@ -21,6 +21,10 @@ import { SingleChartComponent } from './components/single-chart/single-chart.com
 import { ListaMaximosComponent } from './components/lista-maximos/lista-maximos.component';
 import { BuscadorTickersIexComponent } from './components/buscador-tickers-iex/buscador-tickers-iex.component';
 import { TickerDetailComponent } from './components/ticker-detail/ticker-detail.component';
+import { AnalysisComponent } from './components/analysis/analysis.component';
+import { AnalysisDetailComponent } from './components/analysis-detail/analysis-detail.component';
+import { ListMaxComponent } from './components/list-max/list-max.component';
+import { CacheListComponent } from './components/cache-list/cache-list.component';
 
 
 
@@ -31,6 +35,9 @@ const appRoutes: Routes = [
   { path: 'lista', component: ListaMaximosComponent },
   { path: 'buscador-tickers-iex', component: BuscadorTickersIexComponent },
   { path: 'ticker-detail/:ticker', component: TickerDetailComponent },
+  { path: 'analysis', component: AnalysisComponent },
+  { path: 'lista-max', component: ListMaxComponent },
+  { path: 'cache', component: CacheListComponent },
   { path: '',
     redirectTo: '/test',
     pathMatch: 'full'
@@ -46,7 +53,11 @@ const appRoutes: Routes = [
     SingleChartComponent,
     ListaMaximosComponent,
     BuscadorTickersIexComponent,
-    TickerDetailComponent
+    TickerDetailComponent,
+    AnalysisComponent,
+    AnalysisDetailComponent,
+    ListMaxComponent,
+    CacheListComponent
   ],
   imports: [
     BrowserModule,

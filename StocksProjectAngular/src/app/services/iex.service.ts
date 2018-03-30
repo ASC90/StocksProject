@@ -7,6 +7,7 @@ import { map } from 'rxjs/operators';
 @Injectable()
 export class IexService {
   tickers = [];
+  maximus = [];
   constructor(
     private http: HttpClient,
     private key: KeyService

@@ -1,12 +1,41 @@
 <div class="container">
-  <ul *ngIf="tickerDetail.symbol">
-    <li>{{tickerDetail.symbol}}</li>
-    <li>{{tickerDetail.companyName}}</li>
-    <li>{{tickerDetail.exchange}}</li>
-    <li>{{tickerDetail.industry}}</li>
-    <li>{{tickerDetail.sector}}</li>
-    <li>{{tickerDetail.website}}</li>
-    <li>{{tickerDetail.description}}</li>
-    <li>Maxim historic: {{historicalMaxPercent}}%</li>
+  <ul>
+    <li>
+      <strong>Ticker: </strong> {{tickerDetail.symbol}}</li>
+    <li>
+      <strong>Name: </strong> {{tickerDetail.companyName}}</li>
+    <li>
+      <strong>Exchange: </strong> {{tickerDetail.exchange}}</li>
+    <li>
+      <strong>Industry: </strong> {{tickerDetail.industry}}</li>
+    <li>
+      <strong>Sector: </strong> {{tickerDetail.sector}}</li>
+    <li>
+      <strong>Website: </strong> {{tickerDetail.website}}</li>
+    <li>
+      <strong>Description: </strong> {{tickerDetail.description}}</li>
+    <li *ngIf="!notFound">
+      <strong>Historical high diference: </strong> {{historicalMaxPercent}}%</li>
+    <li *ngIf="!notFound">
+      <strong>Month diference: </strong> {{monthDiff}}%
+      <i *ngIf="_monthDiff" class="material-icons arr-up">arrow_upward</i>
+      <i *ngIf="!_monthDiff" class="material-icons arr-dow">arrow_downward</i>
+    </li>
+    <li *ngIf="!notFound">
+      <strong>Trimester diference: </strong> {{trimesterDiff}}%
+      <i *ngIf="_trimesterDiff" class="material-icons arr-up">arrow_upward</i>
+      <i *ngIf="!_trimesterDiff" class="material-icons arr-dow">arrow_downward</i>
+    </li>
+    <li *ngIf="!notFound">
+      <strong>Half a year diference: </strong> {{halfYearDiff}}%
+      <i *ngIf="_halfYearDiff" class="material-icons arr-up">arrow_upward</i>
+      <i *ngIf="!_halfYearDiff" class="material-icons arr-dow">arrow_downward</i>
+    </li>
+    <li *ngIf="!notFound">
+      <strong>Year diference: </strong> {{yearDiff}}%
+      <i *ngIf="_yearDiff" class="material-icons arr-up">arrow_upward</i>
+      <i *ngIf="!_yearDiff" class="material-icons arr-dow">arrow_downward</i>
+    </li>
+    <li *ngIf="notFound"><strong>Data not found</strong></li>
   </ul>
 </div>

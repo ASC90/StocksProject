@@ -1,0 +1,7 @@
+<div class="container">
+  <div class="row">
+    <div *ngFor="let item of list; index as i" class="col s12 m6 l6 xl4">
+      <app-analysis-detail [data]="item"></app-analysis-detail>
+    </div>
+  </div>
+</div>

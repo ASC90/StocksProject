@@ -1,0 +1,5 @@
+<div class="container">
+    <ul>
+      <li *ngFor="let item of list"><a routerLink="/ticker-detail/{{item.ticker}}">{{item.ticker}} <span [class.err]="item.max == 404 ? true : false">{{item.max}}</span></a></li>
+    </ul>
+  </div>
