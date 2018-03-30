@@ -7,7 +7,10 @@ import { map } from 'rxjs/operators';
 @Injectable()
 export class IexService {
   tickers = [];
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private key: KeyService
+  ) { }
 
   getTickers():Observable<any> {
     return this.http.get("https://api.iextrading.com/1.0/ref-data/symbols").pipe(
@@ -25,5 +28,7 @@ export class IexService {
   getCompanyInfo(ticker: string):Observable<any> {
     return this.http.get("https://api.iextrading.com/1.0/stock/"+ticker+"/company");
   }
-  
+  getHistoricalData(ticker: string):Observable<any> {
+    return this.http.get("https://www.quandl.com/api/v3/datasets/WIKI/"+ticker+"/data.json?api_key="+this.key.QUANDL_KEY);
+  }
 }
