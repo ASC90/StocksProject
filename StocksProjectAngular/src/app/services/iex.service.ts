@@ -4,6 +4,8 @@ import { Observable } from 'rxjs/Observable';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
+
+
 @Injectable()
 export class IexService {
   tickers = [];

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IexService } from '../../services/iex.service';
 
+
 @Component({
   selector: 'app-list-max',
   templateUrl: './list-max.component.html',
@@ -11,10 +12,10 @@ export class ListMaxComponent implements OnInit {
   constructor(
     private service: IexService
   ) { }
-
   ngOnInit() {
     this.service.getTickers().subscribe(res => {
       console.log(res);
+      this.saveTextAsFile(JSON.stringify(res), 'tickers.json');
       let index = 0;
       let interval = setInterval(() => {
         console.log(res[index]);
@@ -48,5 +49,14 @@ export class ListMaxComponent implements OnInit {
     let max = Math.abs(((actualPrice / maximusPrice) * 100) - 100);
     this.list.push({ ticker: info.symbol, max: max });
     console.log(this.list);
+  }
+  saveTextAsFile(fileText: string, fileName: string) {
+    if (!fileText || !fileName) {
+      console.error("No file Text or filename");
+    } else {
+      let blob = new Blob([fileText], {type: 'text/json'});
+      let url= window.URL.createObjectURL(blob);
+      window.open(url);
+    }
   }
 }
