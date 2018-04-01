@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IexService } from '../../services/iex.service';
+import { saveAs } from 'file-saver/FileSaver';
 
 
 @Component({
@@ -56,7 +57,8 @@ export class ListMaxComponent implements OnInit {
     } else {
       let blob = new Blob([fileText], {type: 'text/json'});
       let url= window.URL.createObjectURL(blob);
-      window.open(url);
+      // window.open(url);
+      saveAs(blob, fileName, '');
     }
   }
 }
